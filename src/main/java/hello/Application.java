@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class,WebMvcAutoConfiguration.class })
-@ImportResource({ "classpath:webservice-definition-beans.xml" })
+@ImportResource({ "classpath:webservice-definition-beans.xml" }) //GreetingServiceImplService Config
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

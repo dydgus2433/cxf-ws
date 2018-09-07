@@ -12,6 +12,8 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import hello.interceptor.AppInboundInterceptor;
+import hello.interceptor.AppOutboundInterceptor;
 import hello.service.cxf.InfoServiceImpl;
 
 @Configuration
@@ -25,8 +27,8 @@ public class CXFConfig {
     @Bean(name=Bus.DEFAULT_BUS_ID)
     public SpringBus springBus() {    
     	SpringBus springBus = new SpringBus();
-//       	springBus.getInInterceptors().add(new AppInboundInterceptor());
-//    	springBus.getOutInterceptors().add(new AppOutboundInterceptor());
+       	springBus.getInInterceptors().add(new AppInboundInterceptor());
+    	springBus.getOutInterceptors().add(new AppOutboundInterceptor());
     	return springBus;
     }	
     
